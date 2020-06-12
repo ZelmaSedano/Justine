@@ -53,9 +53,9 @@
   .container .navbar {
     /* makes sure it floats next to 'Elysian Rage' */
     display: inline;
-    height: auto;
+    height: auto; /* VSCode LIES & says this is ignored b/c of display:inline */
     line-height: auto;
-    float: right;
+    float: right; /* VSCode LIES & says this is ignored b/c of display:inline */
     padding-top: 18px;
   }
 

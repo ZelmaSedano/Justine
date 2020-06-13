@@ -138,17 +138,29 @@
     padding-top: 2em;
 
     /* -- text and font settings -- */
-    color: #464d5d;
+    color: white;
+    text-shadow: 1px 1px black;
     text-align: justify;
     font-family: "Poiret One", Sans-Serif;
     font-weight: bold;
     font-size: 1.5em;
     line-height: 1.3;
+  }
+
+  /* create a pseudo-element that holds the background.
+     It can have filters that won't affect the bio-element. */
+  .bio::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-height: 100%;
+    min-width: 100%;
+    content: "";
+    /* ensure this element is layered behind the bio element */
+    z-index: -1;
 
     /* -- background -- */
     background-image: url("../images/norwegian_woods.jpg");
-    /* creates overlay filter cover on the background image */
-    filter: sepia(60%);
     /* insures background image doesn't tile */
     background-repeat: no-repeat;
     /* keeps background image centered vertically and horizontally at all times */
@@ -158,18 +170,8 @@
     background-size: cover;
     /* background color that will be displayed while the background image is loading */
     background-color: #464646;
-  }
-
-  .layer {
-    background-color: rgba(248, 247, 216, 0.7);
-    top: 77px;
-    /* ensure it fills the window */
-    min-height: 100%;
-    /* pad the left and right side, so the text gets pushed to the middle */
-    padding-left: 10%;
-    padding-right: 10%;
-    /* pad about 2 text lines at the top */
-    padding-top: 2em;
+    /* modify the color with filters */
+    filter: sepia(70%) contrast(70%) brightness(50%);
   }
 }
 
@@ -253,13 +255,15 @@
     padding-top: 0px;
     padding-bottom: 0px;
     /* makes the background transparent */
-    opacity: 0.6;
+    opacity: 0.8;
     position: fixed;
     /* left & right 2gether puts in middle */
     left: 30%;
     right: 30%;
     /* aligns text to the center when in mobile view */
     text-align: center;
+    /* a high z-index ensures this element will be shown on top of other elements, not behind */
+    z-index: 100;
   }
 
   /* -- Unordered List <ul> -- */
@@ -303,14 +307,12 @@
     /* !! we need more vertical space for the header because we are putting the menu icon below the header now */
   }
 
-  /* -- About Page Bio image & text -- */
+  /* -- Biography Section/Image on About Page -- */
   .bio {
-    /* !!!remove?? takes out of document flow - allows it to float below header*/
-
+    /* -- positioning -- */
+    /* takes out of document flow - allows it to float below header*/
     position: absolute;
-
-    /* -- Positioning */
-    /* pushes pic/text below header/'Menu' (menu-icon) */
+    /* pushes below header */
     top: 113px;
     /* ensure it fills the window */
     min-height: 100%;
@@ -320,38 +322,41 @@
     /* pad about 2 text lines at the top */
     padding-top: 2em;
 
-    /* -- Styling Text -- */
-    color: #464d5d;
+    /* -- text and font settings -- */
+    color: white;
+    text-shadow: 1px 1px black;
     text-align: justify;
     font-family: "Poiret One", Sans-Serif;
     font-weight: bold;
     font-size: 1.5em;
     line-height: 1.3;
+  }
 
-    /* -- Background -- */
+  /* create a pseudo-element that holds the background.
+     It can have filters that won't affect the bio-element. */
+  .bio::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-height: 100%;
+    min-width: 100%;
+    content: "";
+    /* ensure this element is layered behind the bio element */
+    z-index: -1;
+
+    /* -- background -- */
     background-image: url("../images/norwegian_woods.jpg");
-    /* creates overlay filter cover on the background image */
-    filter: sepia(60%);
     /* insures background image doesn't tile */
     background-repeat: no-repeat;
     /* keeps background image centered vertically and horizontally at all times */
     background-position: center center;
-    /* makes the background image rescale based on the container's size */
+    /* makes the background image rescale based
+     on the container's size */
     background-size: cover;
     /* background color that will be displayed while the background image is loading */
     background-color: #464646;
-  }
-
-  .layer {
-    background-color: rgba(248, 247, 216, 0.7);
-    top: 77px;
-    /* ensure it fills the window */
-    min-height: 100%;
-    /* pad the left and right side, so the text gets pushed to the middle */
-    padding-left: 10%;
-    padding-right: 10%;
-    /* pad about 2 text lines at the top */
-    padding-top: 2em;
+    /* modify the color with filters */
+    filter: sepia(70%) contrast(70%) brightness(50%);
   }
 
   /* Hide the navBar on mobile by adding the hidden-on-mobile class to it. 

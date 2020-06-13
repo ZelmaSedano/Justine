@@ -138,8 +138,7 @@
     padding-top: 2em;
 
     /* -- text and font settings -- */
-    color: white;
-    text-shadow: 1px 1px black;
+    color: #464d5d;
     text-align: justify;
     font-family: "Poiret One", Sans-Serif;
     font-weight: bold;
@@ -322,8 +321,7 @@
     padding-top: 2em;
 
     /* -- Styling Text -- */
-    color: white;
-    text-shadow: 3px 3px black;
+    color: #464d5d;
     text-align: justify;
     font-family: "Poiret One", Sans-Serif;
     font-weight: bold;
@@ -342,6 +340,18 @@
     background-size: cover;
     /* background color that will be displayed while the background image is loading */
     background-color: #464646;
+  }
+
+  .layer {
+    background-color: rgba(248, 247, 216, 0.7);
+    top: 77px;
+    /* ensure it fills the window */
+    min-height: 100%;
+    /* pad the left and right side, so the text gets pushed to the middle */
+    padding-left: 10%;
+    padding-right: 10%;
+    /* pad about 2 text lines at the top */
+    padding-top: 2em;
   }
 
   /* Hide the navBar on mobile by adding the hidden-on-mobile class to it. 

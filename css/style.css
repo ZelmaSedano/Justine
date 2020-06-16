@@ -1,14 +1,14 @@
 /* TO-DO
-  - add instagram icon 
-  - active effect on desktop - working?
-  - change 'Menu" to 3-bar mobile menu icon 
+  - turn off hover effect for instagram icon 
   - down arrow at bottom of mobile page (z-index?)
-  - when you click the 'Menu' in mobile and scroll down, the arrow should disappear 
+  - make down arrow disappear when you get to the bottom
+  - submenus for digital - 2020, 2019, 2018, etc. 
 */
 
 /***** ----------------------------- *****/
 /**** ----------- DESKTOP ---------- ****/
-@media (min-width: 736px) {
+/***** ----------------------------- *****/
+@media (min-width: 776px) {
   /* -- Container holding 'header' and 'navbar' -- */
   .container {
     /* makes navbar scaleable */
@@ -69,7 +69,7 @@
   /* -- Styling for Link Text -- */
   .container .navbar ul li {
     display: inline;
-    font-size: 1.7em;
+    font-size: 1.65em;
     font-family: "Poiret One", Sans-Serif;
     font-weight: bold;
     padding: 5px;
@@ -87,12 +87,13 @@
   .container .navbar ul li a:hover {
     color: black;
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 0.5px solid #464d5d;
   }
 
   /* -- Underlines Active Link -- */
   .container .navbar ul li a.active {
-    text-decoration: underline;
+    border-bottom: 1.5px solid black;
   }
 
   /* -- Scrollmenu / Images -- */
@@ -171,16 +172,17 @@
     /* background color that will be displayed while the background image is loading */
     background-color: #464646;
     /* modify the color with filters */
-    filter: sepia(70%) contrast(70%) brightness(50%);
+    filter: sepia(100%) contrast(60%) brightness(50%);
   }
 }
 
 /***** ----------------------------- *****/
 /***** --------- MOBILE ------------ *****/
+/***** ----------------------------- *****/
 
 /*** See also:  https://www.w3schools.com/howto/howto_css_dropdown.asp ***/
 
-@media (max-width: 735px) {
+@media (max-width: 775px) {
   /* -- Container holding 'header' and 'navbar' -- */
   .container {
     /* makes navbar scaleable */

@@ -3,6 +3,10 @@
   - down arrow at bottom of mobile page (z-index?)
   - make down arrow disappear when you get to the bottom
   - submenus for digital - 2020, 2019, 2018, etc. 
+  - add links on about page 
+
+  bugs: 
+  - images not right width on mobile version of 'pencil' page 
 */
 
 /***** ----------------------------- *****/
@@ -19,8 +23,11 @@
     display: block;
   }
 
+  /* ----------------------------------------------------------- */
+
   /* -- Header -- */
   .container .header {
+    /* floats 'Elysian Rage' to the left */
     float: left;
   }
 
@@ -44,18 +51,24 @@
     color: black;
   }
 
-  /* -- Hides 'Menu' (drop-down clicker) from desktop -- */
+  /* ----------------------------------------------------------- */
+
+  /* -- Hides 'Menu' (drop-down clicker) when in desktop mode -- */
   .container .menu-icon {
     display: none;
   }
+
+  /* ----------------------------------------------------------- */
 
   /* -- Navbar/Links -- */
   .container .navbar {
     /* makes sure it floats next to 'Elysian Rage' */
     display: inline;
-    height: auto; /* VSCode LIES & says this is ignored b/c of display: inline */
+    height: auto;
     line-height: auto;
-    float: right; /* VSCode LIES & says this is ignored b/c of display: inline */
+    /* floats navbar right of 'Elysian Rage' */
+    float: right;
+    /* pushes navbar down slightly */
     padding-top: 18px;
   }
 
@@ -68,6 +81,7 @@
 
   /* -- Styling for Link Text -- */
   .container .navbar ul li {
+    /* floats li's horizontally */
     display: inline;
     font-size: 1.65em;
     font-family: "Poiret One", Sans-Serif;
@@ -91,10 +105,17 @@
     border-bottom: 0.5px solid #464d5d;
   }
 
+  /* turns off the hover effect for the instagram icon */
+  .container .navbar ul li .insta:hover {
+    border-bottom: none;
+  }
+
   /* -- Underlines Active Link -- */
   .container .navbar ul li a.active {
     border-bottom: 1.5px solid black;
   }
+
+  /* ----------------------------------------------------------- */
 
   /* -- Scrollmenu / Images -- */
   .scrollmenu {
@@ -122,6 +143,8 @@
     /* scales the image to 100% height of the container */
     height: 100%;
   }
+
+  /* ----------------------------------------------------------- */
 
   /* -- Biography Section/Image on About Page -- */
   .bio {
@@ -176,6 +199,9 @@
   }
 }
 
+/* --------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+
 /***** ----------------------------- *****/
 /***** --------- MOBILE ------------ *****/
 /***** ----------------------------- *****/
@@ -192,6 +218,8 @@
     max-width: 100%;
     display: block;
   }
+
+  /* ----------------------------------------------------------- */
 
   /* -- Header -- */
   .container .header {
@@ -216,6 +244,8 @@
     color: #464d5d;
   }
 
+  /* ----------------------------------------------------------- */
+
   /* !! Remember to specify height in pixels, i.e. use 'px' */
   /* -- Mobile Drop-Down Menu -- */
   .container .menu-icon {
@@ -239,6 +269,14 @@
     -webkit-user-select: none;
     -o-user-select: none;
   }
+
+  /* Hide the navBar on mobile by adding the hidden-on-mobile class to it. 
+     - When on a mobile device, the drop-down menu will be hidden 'til clicked. */
+  .hidden-on-mobile {
+    display: none;
+  }
+
+  /* ----------------------------------------------------------- */
 
   /* -- Navbar/Links -- */
   /* !! Navbar - when clicked it shows 'X', and the menu drops down. When not clicked, 'Menu' is displayed */
@@ -302,12 +340,16 @@
     margin: 0 auto;
   }
 
+  /* ----------------------------------------------------------- */
+
   /* -- Images -- */
   /* !! only certain styles will apply from desktop version, since we don't want the images to scroll */
   .scrollmenu {
     background-color: #fff;
     /* !! we need more vertical space for the header because we are putting the menu icon below the header now */
   }
+
+  /* ----------------------------------------------------------- */
 
   /* -- Biography Section/Image on About Page -- */
   .bio {
@@ -359,12 +401,6 @@
     background-color: #464646;
     /* modify the color with filters */
     filter: sepia(70%) contrast(70%) brightness(50%);
-  }
-
-  /* Hide the navBar on mobile by adding the hidden-on-mobile class to it. 
-     - When on a mobile device, the drop-down menu will be hidden 'til clicked. */
-  .hidden-on-mobile {
-    display: none;
   }
 
   /*!! 

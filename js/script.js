@@ -33,7 +33,7 @@ menuIcon.addEventListener("click", function () {
   console.log("click!");
 
   /* create a const/var to apply only to the mobile media-query */
-  const mq = window.matchMedia("(max-width: 735px)");
+  const mq = window.matchMedia("(max-width: 775px)");
 
   if (mq.matches) {
     /* the code below will only execute when the screen is sufficiently narrow (e.g. on mobile devices) */

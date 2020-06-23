@@ -201,6 +201,24 @@
   }
 }
 
+.bio .icons ul {
+  /* removes bullet points */
+  list-style: none;
+  height: 100px;
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+.bio .icons ul li {
+  display: inline;
+  padding: 1.2em;
+  padding-bottom: 0px;
+}
+
+.bio .icons a {
+  border: none;
+}
+
 @media (max-width: 860px) {
   .container .navbar ul li {
     letter-spacing: 0.5px;
@@ -417,6 +435,19 @@
   - img-fluid { height: 100% } from desktop should NOT be applied in mobile, it causes images to warp
   - we want them to scale with the window size 
    */
+}
+
+.bio .icons ul {
+  /* removes bullet points */
+  height: 50px;
+  list-style: none;
+  text-align: center;
+}
+
+.bio .icons ul li {
+  display: inline;
+  padding: 1.2em;
+  padding-bottom: 0px;
 }
 
 @media (max-width: 445px) {

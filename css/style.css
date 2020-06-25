@@ -1,13 +1,25 @@
 /* TO-DO
-  - turn off hover effect for instagram icon 
   - down arrow at bottom of mobile page (z-index?)
   - make down arrow disappear when you get to the bottom
   - submenus for digital - 2020, 2019, 2018, etc. 
-  - add links on about page 
 
   bugs: 
-  - images not right width on mobile version of 'pencil' page 
+  - images not right width on mobile version of 'pencil' 
+  - drop-down menu stuck on page when scroll down 
 */
+
+/***** ----------------------------- *****/
+/**** ----------- GLOBAL ---------- ****/
+/***** ----------------------------- *****/
+
+/* styling for all links on page */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Google Font's Poiret One for entire page */
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 
 /***** ----------------------------- *****/
 /**** ----------- DESKTOP ---------- ****/
@@ -23,7 +35,7 @@
     display: block;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* -- Header -- */
   .container .header {
@@ -52,14 +64,14 @@
     color: black;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* -- Hides 'Menu' (drop-down clicker) when in desktop mode -- */
   .container .menu-icon {
     display: none;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* -- Navbar/Links -- */
   .container .navbar {
@@ -94,8 +106,6 @@
 
   /* -- Styling for list Items Links -- */
   .container .navbar ul li a {
-    /* removes bullet points */
-    text-decoration: none;
     color: #464d5d;
   }
 
@@ -117,7 +127,7 @@
     border-bottom: 0.75px solid black;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* -- Scrollmenu / Images -- */
   .scrollmenu {
@@ -146,7 +156,7 @@
     height: 100%;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* -- Biography Section/Image on About Page -- */
   .bio {
@@ -199,25 +209,40 @@
     /* modify the color with filters */
     filter: sepia(100%) contrast(60%) brightness(50%);
   }
-}
 
-.bio .icons ul {
-  /* removes bullet points */
-  list-style: none;
-  height: 100px;
-  text-align: center;
-  padding-bottom: 0px;
-}
+  /* paragraph text in the bio div */
+  .bio .layer .paragraph {
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
 
-.bio .icons ul li {
-  display: inline;
-  padding: 1.2em;
-  padding-bottom: 0px;
-}
+  /* social media links at the bottom */
+  .bio .social_media ul {
+    /* removes bullet points */
+    list-style: none;
+    height: 100px;
+    text-align: center;
+    padding-bottom: 0px;
+  }
 
-.bio .icons a {
-  border: none;
+  .bio .social_media ul li {
+    display: inline;
+    margin: 1.2em;
+    padding: 0.3em;
+    border: 1px solid white;
+  }
+
+  .bio .social_media ul li a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* removes the mobile icons while in dektop mode */
+  .hidden-on-desktop {
+    display: none;
+  }
 }
+/* end of desktop media query */
 
 @media (max-width: 860px) {
   .container .navbar ul li {
@@ -225,8 +250,8 @@
   }
 }
 
-/* --------------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------------- */
 
 /***** ----------------------------- *****/
 /***** --------- MOBILE ------------ *****/
@@ -245,7 +270,7 @@
     display: block;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* -- Header -- */
   .container .header {
@@ -271,7 +296,7 @@
     color: #464d5d;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* !! Remember to specify height in pixels, i.e. use 'px' */
   /* -- Mobile Drop-Down Menu -- */
@@ -303,9 +328,9 @@
     display: none;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
-  /* -- Navbar/Links -- */
+  /* -------- Navbar/Links -------- */
   /* !! Navbar - when clicked it shows 'X', and the menu drops down. When not clicked, 'Menu' is displayed */
   .container .navbar {
     /*? float: right; */
@@ -333,7 +358,7 @@
     z-index: 100;
   }
 
-  /* -- Unordered List <ul> -- */
+  /* -------- Unordered List <ul> -------- */
   .container .navbar ul {
     /* removes bullet points */
     list-style: none;
@@ -344,7 +369,7 @@
     padding-top: 1em;
   }
 
-  /* -- List Items in <ul> -- */
+  /* -------- List Items in <ul> -------- */
   .container .navbar ul li {
     /* The elements in the list will be placed vertically */
     display: block;
@@ -368,7 +393,7 @@
     margin: 0 auto;
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* -- Images -- */
   /* !! only certain styles will apply from desktop version, since we don't want the images to scroll */
@@ -377,7 +402,7 @@
     /* !! we need more vertical space for the header because we are putting the menu icon below the header now */
   }
 
-  /* ----------------------------------------------------------- */
+  /* --------------------------------------------------------------------------------------------------------- */
 
   /* -- Biography Section/Image on About Page -- */
   .bio {
@@ -431,25 +456,32 @@
     filter: sepia(70%) contrast(70%) brightness(50%);
   }
 
+  .bio .layer .paragraph {
+    margin-top: 15px;
+    margin-bottom: 40px;
+  }
+
+  .bio .icons ul {
+    /* removes bullet points */
+    height: 50px;
+    list-style: none;
+    text-align: center;
+  }
+
+  .bio .icons ul li {
+    display: inline;
+    padding-right: 1.6em;
+    padding-bottom: 0px;
+  }
+
   /*!! 
   - img-fluid { height: 100% } from desktop should NOT be applied in mobile, it causes images to warp
   - we want them to scale with the window size 
    */
 }
+/* end of mobile media query */
 
-.bio .icons ul {
-  /* removes bullet points */
-  height: 50px;
-  list-style: none;
-  text-align: center;
-}
-
-.bio .icons ul li {
-  display: inline;
-  padding: 1.2em;
-  padding-bottom: 0px;
-}
-
+/* */
 @media (max-width: 445px) {
   .container .navbar {
     /* left & right 2gether puts in middle */
